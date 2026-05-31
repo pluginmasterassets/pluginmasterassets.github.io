@@ -2,17 +2,20 @@
    CSS Variables - Dark Theme Color Palette
    ============================================ */
 :root {
-    --primary-bg: #0d1117;
-    --secondary-bg: #161b22;
-    --tertiary-bg: #21262d;
-    --primary-text: #c9d1d9;
-    --secondary-text: #8b949e;
-    --accent-blue: #58a6ff;
-    --accent-green: #3fb950;
-    --accent-orange: #d29922;
-    --border-color: #30363d;
-    --hover-color: #1f6feb;
-    --navbar-height: 70px;
+    /* Plugin Master brand palette */
+    --primary-bg: #000d17;
+    --secondary-bg: #001621;
+    --tertiary-bg: #00202e;
+    --primary-text: #dce8ed;
+    --secondary-text: #5e8a9e;
+    --accent-blue: #eb662e;    /* brand orange — primary accent */
+    --accent-green: #2cb5d4;   /* brand teal — secondary accent  */
+    --accent-orange: #f08040;  /* warm highlight for labels       */
+    --border-color: #062436;
+    --hover-color: #c94f1c;    /* darker orange for hover         */
+    --navbar-top-height: 52px;
+    --navbar-bottom-height: 44px;
+    --navbar-height: calc(var(--navbar-top-height) + var(--navbar-bottom-height));
 }
 
 /* ============================================
@@ -48,90 +51,188 @@ a:hover {
 /* ============================================
    Navigation Bar
    ============================================ */
+
+/* Wrapper */
 .navbar {
-    background-color: var(--secondary-bg);
-    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: var(--navbar-height);
-    display: flex;
-    align-items: center;
+    background-color: #001621;
 }
 
-.navbar-container {
-    max-width: 1200px;
+/* ---- Top row ---- */
+.navbar-top {
+    height: var(--navbar-top-height);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(235, 102, 46, 0.25);
+}
+
+.navbar-top-inner {
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbar-logo a {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--accent-blue);
-    transition: color 0.3s ease;
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
 }
 
-.navbar-logo a:hover {
-    color: var(--accent-green);
+.navbar-logo:hover {
+    opacity: 0.85;
+    color: #ffffff;
+}
+
+.logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
+}
+
+.logo-mark {
+    width: 22px;
+    height: 22px;
+    color: var(--accent-blue);
+    flex-shrink: 0;
+}
+
+.logo-text {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.navbar-utility {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-store {
+    background-color: var(--accent-blue);
+    color: #ffffff !important;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 18px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-store:hover {
+    background-color: var(--hover-color);
+    color: #ffffff !important;
+}
+
+/* ---- Bottom row ---- */
+.navbar-bottom {
+    height: var(--navbar-bottom-height);
+    display: flex;
+    align-items: center;
+    background-color: #000d17;
+    border-bottom: 1px solid rgba(235, 102, 46, 0.15);
+}
+
+.navbar-bottom-inner {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 30px;
+    height: var(--navbar-bottom-height);
+    gap: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
-    color: var(--primary-text);
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 16px;
+    color: #6a96aa;
+    font-size: 13px;
+    font-weight: 400;
+    white-space: nowrap;
     position: relative;
+    transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-    color: var(--accent-blue);
+    color: #ffffff;
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
-    width: 0;
-    height: 2px;
+    right: 0;
+    height: 3px;
     background-color: var(--accent-blue);
-    transition: width 0.3s ease;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+.nav-link:hover::after,
+.nav-link--active::after {
+    transform: scaleX(1);
 }
 
-/* Mobile Navigation Toggle */
+.nav-link--active {
+    color: #ffffff;
+}
+
+/* ---- Mobile ---- */
 @media (max-width: 768px) {
-    .nav-menu {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
+    :root {
+        --navbar-top-height: 48px;
+        --navbar-bottom-height: auto;
     }
 
-    .navbar {
+    .navbar-bottom {
         height: auto;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
     }
 
-    .navbar-container {
-        flex-direction: column;
-        gap: 15px;
+    .navbar-bottom::-webkit-scrollbar {
+        display: none;
     }
 
-    .navbar-logo a {
-        font-size: 20px;
+    .navbar-bottom-inner {
+        padding: 0 8px;
+    }
+
+    .nav-menu {
+        height: 40px;
+        gap: 0;
+        flex-wrap: nowrap;
+    }
+
+    .nav-link {
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+    .logo-text {
+        font-size: 12px;
+        letter-spacing: 1.5px;
     }
 }
 
@@ -185,7 +286,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 30px;
     background-color: var(--tertiary-bg);
     border-radius: 8px;
@@ -202,33 +303,13 @@ a:hover {
 }
 
 .quick-link:hover {
-    background-color: rgba(88, 166, 255, 0.1);
+    background-color: rgba(235, 102, 46, 0.12);
     color: var(--hover-color);
 }
 
 .link-separator {
     color: var(--secondary-text);
     font-weight: 300;
-}
-
-@media (max-width: 768px) {
-    .quick-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .link-separator {
-        display: none;
-    }
-
-    .quick-links::after {
-        content: '';
-    }
-
-    .quick-link {
-        width: 100%;
-        text-align: center;
-    }
 }
 
 /* ============================================
@@ -261,7 +342,7 @@ a:hover {
 }
 
 .changelog-entry:hover {
-    box-shadow: 0 4px 16px rgba(88, 166, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(235, 102, 46, 0.18);
     border-color: var(--accent-blue);
 }
 
@@ -282,7 +363,7 @@ a:hover {
 
 .category {
     padding: 15px;
-    background-color: rgba(88, 166, 255, 0.05);
+    background-color: rgba(235, 102, 46, 0.06);
     border-left: 4px solid var(--accent-blue);
     border-radius: 4px;
 }
@@ -362,7 +443,8 @@ a:hover {
    ============================================ */
 @media (max-width: 768px) {
     :root {
-        --navbar-height: 60px;
+        --navbar-top-height: 48px;
+        --navbar-bottom-height: 40px;
     }
 
     .hero-section {
@@ -475,6 +557,47 @@ a:hover {
 .changelog-entry {
     animation: slideInUp 0.6s ease-out forwards;
 }
+
+/* ============================================
+   Changelog — version date & category colors
+   ============================================ */
+.version-date {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--secondary-text);
+    margin-left: 10px;
+    letter-spacing: 0;
+}
+
+.changelog-loading {
+    text-align: center;
+    color: var(--secondary-text);
+    padding: 40px 0;
+}
+
+/* Features — teal */
+.category--features {
+    background-color: rgba(44, 181, 212, 0.07);
+    border-left-color: var(--accent-green);
+}
+.category--features .category-title { color: var(--accent-green); }
+.category--features .category-title::before { background-color: var(--accent-green); }
+
+/* Changes — purple */
+.category--changes {
+    background-color: rgba(148, 103, 210, 0.07);
+    border-left-color: #9467d2;
+}
+.category--changes .category-title { color: #9467d2; }
+.category--changes .category-title::before { background-color: #9467d2; }
+
+/* Fixes — orange (brand accent, already default) */
+.category--fixes {
+    background-color: rgba(235, 102, 46, 0.07);
+    border-left-color: var(--accent-blue);
+}
+.category--fixes .category-title { color: var(--accent-blue); }
+.category--fixes .category-title::before { background-color: var(--accent-blue); }
 
 .changelog-entry:nth-child(1) {
     animation-delay: 0.1s;

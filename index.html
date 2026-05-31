@@ -9,163 +9,81 @@
 <body>
     <!-- Navigation Header -->
     <header class="navbar">
-        <nav class="navbar-container">
-            <div class="navbar-logo">
-                <a href="#home">Plugin Master Logo</a>
+        <!-- Top row: Logo + Utility -->
+        <div class="navbar-top">
+            <div class="navbar-top-inner">
+                <a href="#prefab" class="navbar-logo">
+                    <img src="pm_logo_50.png" alt="Plugin Master" class="logo-img">
+                </a>
+                <div class="navbar-utility">
+                    <a href="https://assetstore.unity.com/publishers/48595" class="btn-store" target="_blank" rel="noopener noreferrer">Unity Asset Store</a>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#prefab" class="nav-link">Prefab World Builder</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#transform" class="nav-link">Transform Tools</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#psd" class="nav-link">Psd Import</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#play-mode" class="nav-link">Play Mode Save</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#ps-layer" class="nav-link">Ps Layer</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-        </nav>
+        </div>
+        <!-- Bottom row: Product nav links -->
+        <div class="navbar-bottom">
+            <div class="navbar-bottom-inner">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#PWB" class="nav-link">Prefab World Builder</a></li>
+                    <li class="nav-item"><a href="#TT" class="nav-link">Transform Tools</a></li>
+                    <li class="nav-item"><a href="#PMS" class="nav-link">Play Mode Save</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <main class="hero-section" id="prefab">
-        <div class="hero-container">
-            <div class="video-container">
-                <iframe 
-                    class="hero-video" 
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                    title="Prefab World Builder Demo"
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <p class="hero-description">
-                Prefab World Builder is a Unity3D editor extension that makes level design and prop placement much faster and easier. It is available on the Unity Asset Store.
-            </p>
-
-            <!-- Quick Links Bar -->
-            <div class="quick-links">
-                <a href="#store" class="quick-link">Store</a>
-                <span class="link-separator">|</span>
-                <a href="#docs" class="quick-link">Documentation</a>
-                <span class="link-separator">|</span>
-                <a href="#forum" class="quick-link">Support Forum</a>
-                <span class="link-separator">|</span>
-                <a href="#discord" class="quick-link">Discord Server</a>
-            </div>
-        </div>
-    </main>
-
-    <!-- Changelog Section -->
-    <section class="changelog-section">
-        <div class="changelog-container">
-            <h2>Version History</h2>
-
-            <!-- Version 4.1.6 -->
-            <article class="changelog-entry">
-                <h3 class="version-title">Prefab World Builder 4.1.6</h3>
-
-                <div class="changelog-categories">
-                    <div class="category">
-                        <h4 class="category-title">Features</h4>
-                        <ul class="change-list">
-                            <li><strong>[Added]</strong> Enhanced selection highlighting system</li>
-                            <li><strong>[Added]</strong> New prefab organization tools</li>
-                            <li><strong>[Added]</strong> Batch rotation and alignment utilities</li>
-                        </ul>
-                    </div>
-
-                    <div class="category">
-                        <h4 class="category-title">Changes</h4>
-                        <ul class="change-list">
-                            <li><strong>[Changed]</strong> Improved inspector window responsiveness</li>
-                            <li><strong>[Changed]</strong> Updated default color palette for better visibility</li>
-                            <li><strong>[Changed]</strong> Optimized grid rendering performance</li>
-                        </ul>
-                    </div>
-
-                    <div class="category">
-                        <h4 class="category-title">Fixes</h4>
-                        <ul class="change-list">
-                            <li><strong>[Fixed]</strong> Inspector Window Freezing issue</li>
-                            <li><strong>[Fixed]</strong> Shape Tool 'S' key rotation behavior</li>
-                            <li><strong>[Fixed]</strong> Undo/Redo stack memory leak</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Version 4.1.5 -->
-            <article class="changelog-entry">
-                <h3 class="version-title">Prefab World Builder 4.1.5</h3>
-
-                <div class="changelog-categories">
-                    <div class="category">
-                        <h4 class="category-title">Features</h4>
-                        <ul class="change-list">
-                            <li><strong>[Added]</strong> Save Now logic for quick snapshot storage</li>
-                            <li><strong>[Added]</strong> Multi-selection property editor</li>
-                        </ul>
-                    </div>
-
-                    <div class="category">
-                        <h4 class="category-title">Changes</h4>
-                        <ul class="change-list">
-                            <li><strong>[Changed]</strong> Streamlined workflow for prop placement</li>
-                        </ul>
-                    </div>
-
-                    <div class="category">
-                        <h4 class="category-title">Fixes</h4>
-                        <ul class="change-list">
-                            <li><strong>[Fixed]</strong> Snap-to-grid alignment precision</li>
-                            <li><strong>[Fixed]</strong> Performance degradation with large scenes</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Version 4.1.4 -->
-            <article class="changelog-entry">
-                <h3 class="version-title">Prefab World Builder 4.1.4</h3>
-
-                <div class="changelog-categories">
-                    <div class="category">
-                        <h4 class="category-title">Features</h4>
-                        <ul class="change-list">
-                            <li><strong>[Added]</strong> Advanced duplicate array options</li>
-                        </ul>
-                    </div>
-
-                    <div class="category">
-                        <h4 class="category-title">Fixes</h4>
-                        <ul class="change-list">
-                            <li><strong>[Fixed]</strong> Prefab instance synchronization</li>
-                            <li><strong>[Fixed]</strong> Context menu not displaying in rare cases</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
+    <!-- Dynamic Content Area -->
+    <div id="page-content">
+        <!-- Content is loaded here by the router -->
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <p>&copy; 2024 Plugin Master. All rights reserved.</p>
+            <p>&copy; Plugin Master. All rights reserved.</p>
             <p>Professional tools for Unity3D development.</p>
         </div>
     </footer>
+
+    <script>
+        const routes = {
+            'PWB':     'pages/PWB/PWB.html',
+            'TT':  'pages/TT/TT.html',
+            'PMS':  'pages/PMS/PMS.html',
+            'contact':    'pages/contact.html',
+        };
+
+        const contentEl = document.getElementById('page-content');
+
+        async function loadPage(hash) {
+            const key = (hash || '').replace('#', '') || 'PWB';
+            const url = routes[key] || routes['PWB'];
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Not found');
+                contentEl.innerHTML = await response.text();
+
+                // Re-execute inline scripts (innerHTML doesn't run them)
+                contentEl.querySelectorAll('script').forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    [...oldScript.attributes].forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.textContent = oldScript.textContent;
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            } catch {
+                contentEl.innerHTML = '<p style="padding:2rem;text-align:center;">Page not found.</p>';
+            }
+
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.toggle('nav-link--active', link.getAttribute('href') === '#' + key);
+            });
+        }
+
+        window.addEventListener('hashchange', () => loadPage(location.hash));
+        loadPage(location.hash);
+    </script>
 </body>
 </html>
