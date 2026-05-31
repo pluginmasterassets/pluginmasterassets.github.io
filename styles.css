@@ -78,6 +78,12 @@ a:hover {
     align-items: center;
 }
 
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
 .navbar-logo {
     display: flex;
     align-items: center;
@@ -197,43 +203,126 @@ a:hover {
     color: #ffffff;
 }
 
+/* ---- Hamburger button (hidden on desktop) ---- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
 /* ---- Mobile ---- */
 @media (max-width: 768px) {
     :root {
         --navbar-top-height: 48px;
-        --navbar-bottom-height: auto;
+        --navbar-bottom-height: 0px;
+    }
+
+    .menu-toggle {
+        display: flex;
     }
 
     .navbar-bottom {
-        height: auto;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-
-    .navbar-bottom::-webkit-scrollbar {
         display: none;
     }
+}
 
-    .navbar-bottom-inner {
-        padding: 0 8px;
-    }
+/* ============================================
+   Mobile Drawer
+   ============================================ */
+.mobile-drawer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+}
 
-    .nav-menu {
-        height: 40px;
-        gap: 0;
-        flex-wrap: nowrap;
-    }
+.mobile-drawer.is-open {
+    display: block;
+}
 
-    .nav-link {
-        padding: 0 12px;
-        font-size: 12px;
-    }
+.mobile-drawer-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.25s ease;
+}
 
-    .logo-text {
-        font-size: 12px;
-        letter-spacing: 1.5px;
-    }
+.mobile-drawer-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    background-color: var(--secondary-bg);
+    border-right: 1px solid rgba(235, 102, 46, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    animation: slideInLeft 0.25s ease;
+}
+
+.mobile-drawer-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: var(--secondary-text);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 20px 16px;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.mobile-drawer-close:hover {
+    color: #ffffff;
+}
+
+.mobile-nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 14px 24px;
+    color: var(--primary-text);
+    font-size: 15px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.mobile-nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(235, 102, 46, 0.08);
+    border-left-color: var(--accent-blue);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0); }
 }
 
 /* ============================================
@@ -285,20 +374,20 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 4px;
     flex-wrap: nowrap;
-    padding: 30px;
+    padding: 6px 16px;
     background-color: var(--tertiary-bg);
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid var(--border-color);
 }
 
 .quick-link {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     color: var(--accent-blue);
-    transition: all 0.3s ease;
-    padding: 8px 12px;
+    transition: all 0.2s ease;
+    padding: 4px 8px;
     border-radius: 4px;
 }
 
