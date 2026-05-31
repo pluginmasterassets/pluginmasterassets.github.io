@@ -1,0 +1,125 @@
+<!-- Hero Section -->
+<main class="hero-section">
+    <div class="hero-container">
+        <div class="video-container">
+            <iframe 
+                class="hero-video" 
+                src="https://www.youtube.com/embed/cN6WYZAja3o?si=dc2Wj-3Toinqi35A" 
+                title="Prefab World Builder Demo"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <p class="hero-description">
+            Stop placing props one by one. Accelerate your level design using modular grids, physics-based placement, and production-ready editing tools with zero runtime overhead.
+        </p>
+
+        <!-- Quick Links Bar -->
+        <div class="quick-links">
+            <a href="#store" class="quick-link">Store</a>
+            <span class="link-separator">|</span>
+            <a href="#docs" class="quick-link">Documentation</a>
+            <span class="link-separator">|</span>
+            <a href="#forum" class="quick-link">Support Forum</a>
+            <span class="link-separator">|</span>
+            <a href="#discord" class="quick-link">Discord Server</a>
+        </div>
+    </div>
+</main>
+
+<!-- Changelog Section -->
+<section class="changelog-section">
+    <div class="changelog-container" id="pwb-changelog">
+        <h2>Version History</h2>
+        <p class="changelog-loading">Loading...</p>
+    </div>
+</section>
+
+<script>
+(async function () {
+    const container = document.getElementById('pwb-changelog');
+
+    try {
+        const res = await fetch('pages/PWB/PWBChangeLog.txt');
+        if (!res.ok) throw new Error();
+        renderChangelog(container, parseChangelog(await res.text()));
+    } catch {
+        container.innerHTML = '<h2>Version History</h2><p style="color:var(--secondary-text);text-align:center;padding:20px">Could not load changelog.</p>';
+    }
+
+    function parseChangelog(text) {
+        const lines = text.split('\n').map(l => l.trim());
+        const versions = [];
+        let cur = null, cat = null;
+        const CAT_MAP = {
+            features: 'Features', fixes: 'Fixes',
+            changes: 'Changes', changed: 'Changes'
+        };
+
+        for (const line of lines) {
+            if (!line) continue;
+            const m = line.match(/^Prefab World Builder\s+(\S+)\s+(.+)$/);
+            if (m) {
+                cur = { version: m[1], date: m[2], categories: {} };
+                versions.push(cur);
+                cat = null;
+                continue;
+            }
+            if (!cur) continue;
+            const mapped = CAT_MAP[line.toLowerCase()];
+            if (mapped) {
+                cat = mapped;
+                if (!cur.categories[cat]) cur.categories[cat] = [];
+                continue;
+            }
+            if (cat && line.startsWith('[')) {
+                cur.categories[cat].push(line);
+            }
+        }
+        return versions;
+    }
+
+    function renderChangelog(container, versions) {
+        const ORDER = ['Features', 'Changes', 'Fixes'];
+        const CAT_CLASS = { Features: 'category--features', Changes: 'category--changes', Fixes: 'category--fixes' };
+        let html = '<h2>Version History</h2>';
+
+        for (const v of versions) {
+            const cats = ORDER.filter(c => v.categories[c]?.length);
+            if (!cats.length) continue;
+
+            html += `<article class="changelog-entry">
+                <h3 class="version-title">
+                    Prefab World Builder ${esc(v.version)}
+                    <span class="version-date">${esc(v.date)}</span>
+                </h3>
+                <div class="changelog-categories">`;
+
+            for (const catName of ORDER) {
+                const items = v.categories[catName];
+                if (!items?.length) continue;
+                html += `<div class="category ${CAT_CLASS[catName]}">
+                    <h4 class="category-title">${catName}</h4>
+                    <ul class="change-list">`;
+                for (const item of items) {
+                    html += `<li>${fmt(item)}</li>`;
+                }
+                html += `</ul></div>`;
+            }
+            html += `</div></article>`;
+        }
+        container.innerHTML = html;
+    }
+
+    function esc(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function fmt(item) {
+        return esc(item).replace(/^\[(\w+)\]/, '<strong>[$1]</strong>');
+    }
+})();
+</script>
+

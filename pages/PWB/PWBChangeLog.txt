@@ -1,0 +1,717 @@
+Prefab World Builder 4.12.0 May 31, 2026
+Features
+[Added] Brush Tool Overlap Distance. Introduced an "Overlap Padding" property to the Brush tool to enforce an additional minimum distance between placed objects, preventing overlaps.
+[Added] Toggle Overlays Shortcut. Introduced a new shortcut to quickly show or hide all active PWB toolbar overlays.
+[Added] Floor Tool Grid Alignment. Introduced a Grid Alignment option to control how objects are vertically positioned relative to the grid plane (top face, bottom face, or pivot point).
+Fixes
+[Fixed] Inspector Window Freezing. Resolved an issue in Unity 6 where the Inspector window stopped updating after toggling tools.
+[Fixed] Tiling Tool Shortcuts. Resolved a shortcut conflict that caused unintended object rotation when navigating the scene with WASD.
+
+Prefab World Builder 4.11.2 May 18, 2026
+Fixes
+[Fixed] Project Auditor Warnings. Resolved multiple warnings flagged by Unity's Project Auditor.
+[Fixed] Floor Tool Height Alignment. Resolved an issue where the placement and preview height of objects did not align correctly with the grid when using custom cell sizes.
+[Fixed] Block Tool Cell Size. Resolved an issue where the cell size failed to update correctly to match the selected brush.
+[Fixed] Shape Tool Navigation. Resolved an issue where right-click scene navigation was blocked while editing polygon vertices.
+[Fixed] Pin Tool Terrain Embedding. Resolved an issue that caused inconsistent results when embedding objects on terrain surfaces when using "Flatten Terrain".
+[Fixed] macOS Editor Performance. Resolved severe lag and graphical glitches experienced on macOS in Unity 6 by implementing custom position handles.
+
+Prefab World Builder 4.11.1 May 4, 2026
+Fixes
+[Fixed] Preview Flickering. Resolved an issue that caused the preview to flicker in Unity 6.3.
+[Fixed] Extrude Tool. Resolved issues that disrupted the tool's normal workflow.
+
+Prefab World Builder 4.11.0 Apr 30, 2026
+Features
+[Added] Block Tool. New tool for modular grid-based building with multiple drawing and edit modes.
+Fixes
+[Fixed] Multibrush Item Addition. Resolved an error that occurred when adding new items to the multibrush settings.
+[Fixed] Scene View Input Conflicts. Resolved an issue in Unity 6+ where passive control registration was blocking element selection and interfering with other tools in the Scene View.
+
+Prefab World Builder 4.10.2 Apr 15, 2026
+Fixes
+[Fixed] Unity 6.4 Compatibility. Fixed warnings regarding obsolete methods.
+[Fixed] Inspector Refresh. Resolved an issue where the Inspector window would stop updating regardless of the selection.
+
+Prefab World Builder 4.10.1 Mar 14, 2026
+Fixes
+[Fixed] Palette Loading Performance. Resolved an issue that caused slow loading times and constant importing flashes when adding prefabs to a palette.
+[Fixed] Primitive Mesh Detection. Improved IsPrimitive logic in MeshUtils to correctly identify primitive meshes.
+
+Prefab World Builder 4.10.0 Mar 2, 2026
+Features
+[Added] Move Grid Origin to Mouse Position. New shortcut that allows repositioning the grid origin at the current mouse cursor location.
+[Added] "Switch grid axis on camera alignment" toggle. Adds an option in the Grid Settings window to enable or disable the automatic activation of the grid axis when the Scene View camera aligns with a global coordinate axis.
+[Added] Create Single Brushes From Multibrush. Context menu option to quickly generate individual brushes from Multibrush items.
+[Added] Missing Script Warnings. The console now displays a warning when prefabs with missing scripts are detected, helping to identify and resolve broken references in the project.
+Fixes
+[Fixed] Grid flickering in Unity 6. Fixed an issue that caused the grid to flicker when the "Draw grid as texture" option was enabled.
+[Fixed] Shader error on macOS. Fixed a compilation error in the 'MeshRayIntersect' shader when using Metal.
+[Fixed] Unity 6.3 Compatibility. Resolved several warnings regarding the use of obsolete methods when running on Unity 6.3 or higher.
+[Fixed] Circle Brush Freeze. Setting custom min spacing to zero via keyboard no longer freezes the editor.
+[Fixed] Selection Tool Offset. Prevented selected prefabs from moving randomly upon tool activation.
+[Fixed] Selection Filters. Corrected filter behavior in Eraser and Circle Select tools.
+[Fixed] Mirror Parenting. "Same as parent source" now correctly assigns the parent for mirrored objects.
+
+Prefab World Builder 4.9 Oct 19, 2025
+Features
+[Added] Pin tabs in Palette window. Allow to pin tabs in the Palette window to keep frequently used palettes easily accessible.
+[Added] Option in Preferences window to use Unity's built-in asset preview for thumbnails. This option helps to avoid thumbnail generation issues, but the resulting thumbnails cannot be edited.
+[Added] Activate grid on camera alignment. Automatically activate the corresponding grid axis when the Scene View camera aligns with a global coordinate axis, improving workflow when switching between orthogonal views.
+[Added] "Set last selected object as parent" option in parenting settings. Allow to automatically assign the last selected object in the scene or hierarchy as the parent for newly placed objects.
+Fixes
+[Fixed] Error caused by unassigned shortcuts. Now handled correctly without throwing exceptions.
+
+Prefab World Builder 4.8.1 Jul 29, 2025
+Features
+[Added] "From Center" and "To Center" projection options in Shape Tool. Useful for radial distributions where fixed-axis projection isn't sufficient.
+Fixes
+[Fixed] Gaps between neighbor terrains when using Flatten Terrain. Placing objects no longer causes visible seams between terrain tiles.
+[Fixed] "Avoid Overlapping" not working in Brush Tool. The setting now correctly prevents overlapping placements.
+[Fixed] Error when loading missing prefabs. Caused by invalid or outdated references to prefabs that were moved, deleted, or modified outside Unity.
+
+Prefab World Builder 4.8 Jul 21, 2025
+Features
+[Added] Support for Prefab Mode. Tools can now be used directly within Prefab Mode.
+[Added] Button in Preferences Window to manually update the render pipeline scripting define symbol.
+[Added] Shortcut to move selection to mouse position. Moves selected objects directly to mouse cursor position.
+[Added] Toggle to add numeric suffix to placed prefabs. Available in the Preferences window.
+[Added] Ignore scene colliders option in Tool Properties. Allows toggling collision detection with existing scene colliders.
+[Added] "Draw grid as texture" toggle in Grid and Snap Settings. Renders the grid using a textured quad, improving performance in Unity 6.
+[Added] Radius field in Shape Tool properties. Allows setting the radius value directly from the Tool Properties window.
+Changes
+[Improved] Performance in critical code paths. Replaced costly memory allocations with pooled versions to reduce overhead and improve editor responsiveness.
+Fixes
+[Fixed] Infinite reload loop caused by render pipeline scripting define symbol. Occurred in Unity 6 projects using custom Build Profiles.
+[Fixed] Issue with Overwrite Parenting Settings. Settings were not applied correctly, causing errors.
+[Fixed] Issues with "Embed on the Surface" and "Embed at Pivot Height". Embedding options now function properly.
+[Fixed] Shortcut conflict with camera controls. Resolved issues causing interference with camera shortcuts.
+[Fixed] Shortcut profile resetting on Unity restart. Selected shortcut profile is now preserved correctly between sessions.
+[Fixed] Shortcut overlay panel not updating. Overlay now properly updates when changing shortcut profiles.
+[Fixed] Issue with "Factory Reset Selected Profile" function. Shortcut profiles now reset correctly to default settings.
+[Fixed] Typos in Tool Properties window.
+[Fixed] Incorrect hitpoint calculation on surfaces without colliders. Issue occurred when intersected objects were scaled.
+[Fixed] Issue repositioning objects onto surfaces. The Selection Tool now correctly repositions objects onto target surfaces.
+[Fixed] Issue with settings overwritten when switching layouts. Tool settings are now preserved independently from Unity layouts.
+[Fixed] Thumbnail texture reference issue after duplicating brushes. Thumbnails for duplicated brushes no longer reference the same texture as the original.
+[Fixed] Deselection of Unity editing tools when entering Play Mode. Tools now remain selected after the mode change.
+[Fixed] Toolbar button icons not loading on initial import. Icons now load correctly after importing the asset package.
+
+Prefab World Builder 4.7 May 15, 2025
+Features
+[Added] Pick Local Position Offset in Brush Properties. Enables selecting the brush's local offset directly in the scene view.
+[Added] Bounds Snapping. Enables snapping the cursor position to edges and midpoints of nearby objects' bounding boxes in world space.
+[Added] Overwrite Parenting Settings in Tool Properties. Allows tools to override the new global parenting settings if enabled.
+Changes
+[Improved] Collapsed toolbar overlays. Icons are now displayed when toolbar overlays are collapsed.
+Fixes
+[Fixed] Issue applying changes with Return key. Changes to Line, Shape, or Tiling tools weren't applied correctly when "Apply brush settings to pre-existing objects" was enabled.
+[Fixed] Local Position Offset ignored in Floor and Wall tools. Both tools now properly apply the offset defined in Brush Settings.
+[Fixed] Incorrect tile rotation in Floor and Wall tools. Tiles were unexpectedly rotated under certain conditions.
+[Fixed] Incorrect position calculation in Pin tool. Objects with specific rotation or pivot positions were misplaced.
+[Fixed] Shortcut conflict in Default Profile 0. Resolved conflict between rotation shortcuts using the V key and the vertex snapping shortcut.
+
+Prefab World Builder 4.6.1 Apr 17, 2025
+Features
+[Added] Info text next to cursor. Displays contextual information next to the mouse cursor.
+Fixes
+[Fixed] Issue with Brush Tool drawing single item. Brush Tool was incorrectly limited to drawing only one item regardless of brush settings.
+
+Prefab World Builder 4.6 Apr 11, 2025
+Features
+[Added] Floor Tool. Designed for modular environment creation, this tool streamlines the placement of floor tiles and surfaces, aligning them precisely to the ground.
+[Added] Wall Tool. Optimized for building modular interiors, this tool simplifies the placement of vertical wall segments.
+[Added] Modular Environments toolbar overlay. Provides quick access to the Wall and Floor tools.
+[Added] Settings & Docs toolbar overlay. A new overlay that groups essential buttons for quick access: Tool Properties, Grid and Snapping Settings, Preferences, and Documentation.
+[Added] Simplified shortcut profile. Introduces a new shortcut profile (Default 0) that reduces complexity by replacing multi-key combinations with single-key or two-key shortcuts.
+[Added] Reload button in the Items window. Allows reloading items from the file to resolve issues where the item list does not update correctly after a version control sync.
+[Added] Shortcut to replace selected objects. Allows replacing selected objects in the scene with the active brush from the palette.
+[Added] Toggle to rename parent object. Adds an option in the Item Properties window to control whether the parent object should be renamed.
+Changes
+[Improved] Grid and snapping shortcuts. Added an option to disable the first step, allowing them to activate with a single key combination instead of two
+[Improved] Items window behavior. Items now remain visible while a tool is selected, and selecting an item automatically enables Edit Mode if it's not already active.
+Fixes
+[Fixed] Issue with Frequency Pattern text field. Editing the Frequency Pattern field in the Brush Properties window now works as expected.
+[Fixed] Issue with object parenting when switching tools. Objects were being created under a parent named after the new tool instead of the previous one before saving changes.
+[Fixed] Incorrect rendering of pin handles with scale multiplier. Handles were ignoring the scale multiplier, causing misalignment with the object preview.
+[Fixed] Issue with Replacer Tool and multibrushes. The tool now correctly replaces objects when using multibrushes.
+[Fixed] "Apply brush settings to pre-existing objects" not working. Brush settings were not being applied to existing objects when the option was enabled.
+[Fixed] Issue with palette loading. Palettes were not being loaded automatically from files.
+
+Prefab World Builder 4.5.2 Jan 27, 2025
+Fixes
+[Fixed] Toolbar grid settings not updating correctly. Resolved issues where the Grid Snapping, Show Grid, and Lock Grid buttons did not accurately reflect the current state of the grid settings.
+[Fixed] Palette search functionality. Addressed an issue where the search feature in the palette was not working as expected.
+
+Prefab World Builder 4.5.1 Jan 13, 2025
+Features
+[Added] Option to group thumbnail folders. Allows grouping all thumbnail folders into a single folder via a toggle in the Preferences Window, simplifying the process of ignoring these folders in version control systems.
+Fixes
+[Fixed] Tiling tool grid snapping issue. Resolved a problem where drawing exact tile dimensions required extending the rectangle beyond the intended size.
+[Fixed] Issue when entering scale values preceded by zeros. Occurred in the Brush Properties window and caused Unity to become unresponsive.
+
+Prefab World Builder 4.5 Dec 25, 2024
+Features
+[Added] Random Index support in Frequency Pattern. Enables random item selection with optional weights for flexible pattern generation.
+[Added] Filter by Folder in the palette. Allows filtering brushes based on their project folder.
+[Added] Option to toggle auto-opening of Tool Properties window. Configurable in the Preferences Window.
+[Added] Option to toggle auto-opening of Brush Properties window. Configurable in the Preferences Window.
+[Added] Tool Properties button. Opens the Tool Properties window from the toolbar. 
+Changes
+[Improved] Grid visibility button in the toolbar overlay. Now displays X, Y, or Z to indicate the axis normal to the active plane.
+Fixes
+[Fixed] Issues with thumbnails.
+
+Prefab World Builder 4.4.1 Dec 9, 2024
+Fixes
+[Fixed] Namespace error in PWBToolbarOverlay in Unity 2021.3.x.
+
+Prefab World Builder 4.4 Dec 5, 2024
+Features
+[Added] Item list window. Provides a comprehensive overview of all elements created in Edit Mode, making it easier to manage and edit them.
+[Added] Edit mode context menu. Offers quick access to common actions like deleting, duplicating, or modifying elements directly from the scene view.
+[Added] Item properties window. This window provides a detailed view of the selected item's properties and allows you to rename the Item and manage the control points of lines.
+[Added] Shortcuts overlay. Displays available shortcuts within the scene view.
+Fixes
+[Fixed] Line Editing Issue. This fix addresses a bug that caused incorrect object placement when editing lines.
+[Fixed] Object Replacement Issue. This fix resolves an issue where replaced objects in lines, shapes, and tilings were not being properly recognized or updated.
+
+Prefab World Builder 4.3 Oct 24, 2024
+Features
+[Added] Shortcut to flip sprites horizontally.
+[Added] Circle select tool.
+[Added] Functionality to snap the pin tool rotation to the grid rotation.
+[Added] Shortcut to snap the pin tool rotation to the grid rotation.
+
+Prefab World Builder 4.2.1 Sep 30, 2024
+Fixes
+[Fixed] Issue that prevented the "Always Orient Up" option in brush properties from working as intended.
+[Fixed] Issue with sprite thumbnails. Newly created sprite thumbnails were incorrectly displayed as rotated 3D objects.
+Changes
+[Improved] Compatibility with Unity 6.
+
+Prefab World Builder 4.2 Jul 25, 2024
+Features
+[Added] Option to the preferences window to define the color of line control points when they are selected.
+[Added] Functionality to edit mode to allow applying brush properties to existing objects.
+Changes
+[Improved] Scale multiplier control. You can now scroll left/right.
+[Improved] Edit Mode Performance
+Fixes
+[Fixed] Typos in tool and brush properties.
+[Fixed] Issue that prevented saving changes made to brush properties.
+[Fixed] Issue with the Brush tool leaving random gaps when the Avoid Overlapping option was enabled.
+
+Prefab World Builder 4.1.1 Jun 26, 2024
+Fixes
+[Fixed] Issues with upgrading from version 4.0 to 4.1.
+
+Prefab World Builder 4.1 Jun 21, 2024
+Features
+[Added] Multi-Brush pattern ending: Allows you to define specific elements at the ends of lines created with multi-brush frequency patterns.
+Changed
+[Optimized] Edit Mode.
+Fixes
+[Fixed] Issues with surfaces with multiple raycast hit points.
+[Fixed] Error caused by invalid thumbnail filenames.
+[Fixed] Issue with tiling tool not applying changes after moving the tile from the middle handle.
+
+Prefab World Builder 4.0.1 May 9, 2024
+Features
+[Added] Pivot handle for single object selection in Selection Tool.
+Changes
+[Improved] Pin tool pivot handle - now green for better visibility.
+Fixes
+[Fixed] Thumbnail creation issue for objects with component requirements.
+[Fixed] Issue causing slow domain reloads for large prefab libraries.
+[Fixed] Shortcut to select next handle now correctly includes the pivot handle.
+
+
+Prefab World Builder 4.0 Apr 23, 2024
+Features
+[Added] Functionality to edit Thumbnails directly.
+[Added] Functionality to set custom images as thumbnails.
+[Added] Replacer Tool - Position Modes (Target center, Target pivot, On surface).
+Fixes
+[Fixed] Palette issue with long reload times.
+
+Prefab World Builder 3.9.5 Apr 10, 2024
+Fixes
+[Fixed] Issues with brush scaling not being applied when using the Pin Tool and Brush Tool.
+[Fixed] Issues with creating thumbnails in HDRP.
+
+Prefab World Builder 3.9.4 Mar 19, 2024
+Features
+[Added] Functionality to duplicate palettes.
+Fixes
+[Fixed] Palette reimporting issues.
+
+Prefab World Builder 3.9.3 Feb 21, 2024
+Features
+[Added] Line edit mode types, can be set to edit line nodes or to edit line position and rotation.
+[Added] Shortcut to toggle between Line edit mode types.
+Fixes
+[Fixed] Eraser and Replacer tool errors.
+
+Prefab World Builder 3.9.2 Feb 2, 2024
+Features
+[Added] Checkbox in tool properties to show/hide pre-existing lines, shapes or tiles.
+Fixes
+[Fixed] Issue with some prefabs with LOD group when creating new brushes.
+[Fixed] Issue with unloaded scenes.
+[Fixed] Issue editing lines.
+
+Prefab World Builder 3.9.1 Dec 11, 2023
+Fixes
+[Fixed] Issues with palettes not updating after adding new brushes
+
+Prefab World Builder 3.9 Dec 6, 2023
+Features
+[Added] Functionality to copy brushes from one palette to another.
+Changed
+[Optimized] Object preview.
+Fixes
+[Fixed] Issue with objects with LOD group.
+[Fixed] Issue with tiling tool not applying brush settings.
+[Fixed] Issue with midpoint snapping causing the grid to move randomly.
+[Fixed] Palette issues causing unnecessary overwriting of thumbnails.
+[Fixed] Issue with palette search bar losing focus when typing.
+
+Prefab World Builder 3.8 Aug 28, 2023
+Features
+[Added] Option to preferences window to define how the shortcut to select the next palette works: it can be in alphabetical order or in the order in which the palettes are displayed.
+[Added] Always Orient Up option to brush properties.
+[Added] Shortcut to drag prefabs from palette to scene. (Ctrl + Drag brush to scene)
+Changes
+[Improved] Json files now use pretty-print format.
+[Optimized] Brush creation process.
+[Improved] Brush name labels now scale with the thumbnail.
+Fixes
+[Fixed] Issue with brush properties not applying Random Surface Distance when multiple brushes were selected.
+[Fixed] Gravity tool issue not ignoring invisible colliders.
+[Fixed] Issues caused by corrupted palette files.
+[Fixed] Issues with selection tool when moving embedded objects on the surface.
+
+Prefab World Builder 3.7.3 Jul 19, 2023
+Fixes
+[Fixed] Issue causing long timeouts when selecting tools.
+[Fixed] Issue with random scale not being applied when multiple prefabs were selected.
+[Fixed] Issue with wrong previews of skinned meshes.
+
+Prefab World Builder 3.7.2 Jul 10, 2023
+Fixes
+[Fixed] Issues with tools not refreshing after hierarchy change.
+[Fixed] Edit mode issues with rotated prefabs.
+[Fixed] Issue that caused brushes values to be reset when merging them.
+
+Prefab World Builder 3.7.1 Jun 2, 2023
+Fixes
+[Fixed] Issues calculating bounds of objects with LOD.
+[Fixed] Issues with the tiling tool when overwriting brush properties.
+[Fixed] Issue with the extrude tool when extruding in local space.
+
+Prefab World Builder 3.7 May 8, 2023
+Features
+[Added] Shortcut to add new points to lines.
+Fixes
+[Fixed] Issue when replacing objects belonging to lines, shapes or tilings.
+[Fixed] Issue with the Shape tool causing edit mode to be disabled when no brushes were selected.
+[Fixed] Lag issues with the brush tool when using a large radius.
+[Fixed] Issues with the line tool when overwriting brush scale.
+[Fixed] Slowdown issues when filtering brushes by name.
+[Fixed] Conflicts with grid shortcuts
+
+Prefab World Builder 3.6.1 Apr 5, 2023
+Fixes
+[Fixed] Circle shape issues with multibrushes.
+[Fixed] Issue when changing data folder. Thumbnail folders were not being moved.
+[Fixed] Issue when adding multibrush items.
+[Fixed] Shape tool issues with patterns not restarting.
+
+Prefab World Builder 3.6 Mar 29, 2023
+Features
+[Added] Functionality to show tabs in multiple rows.
+[Added] Slider to the preferences window that allows you to set the mouse sensitivity to change the value of the distance from the surface of the gravity tool.
+[Added] Menu item to update all thumbnails at once.
+[Added] Functionality to define a random value for the distance to the surface.
+Changes
+[Changed] the behavior of deleting lines. Now the parent is also removed if it is an empty object.
+Fixes
+[Fixed] Problem when editing a line after deleting the brush it was created with.
+[Fixed] Problem when updating the package from old versions. 
+[Fixed] Issue when updating multiple thumbnails, only the thumbnail that was clicked to open the context menu was updated.
+[Fixed] Issue causing preferences to be reset.
+
+Prefab World Builder 3.5 Mar 13, 2023
+Features
+[Added] Functionality to set surface as parent of placed objects.
+[Added] Functionality to regenerate the PWBData file when it gets corrupted.
+[Added] Midpoints to the pin tool handles.
+[Added] Shortcut to set the previous handle as active.
+[Added] Flip settings to brush properties.
+Changes
+[Changed] Pin tool handles to rotate towards the surface when the brush is not rotating to the surface.
+[Changed] Brush thumbnails. They are now saved so they do not change with each new scene/lighting setup.
+[Changed] Persistence of thumbnail size. Now the size of the thumbnails is saved and does not change between sessions or when changing the layout.
+Fixes
+[Fixed] Pin issue with rotated brushes with off-center pivot.
+[Fixed] Issue when removing tool toggle shortcuts.
+[Fixed] Issue with prefabs being added in reverse order when dropped into a palette and the cursor was visible.
+[Fixed] Flipped sprites issues.
+
+Prefab World Builder 3.4.1 Feb 13, 2023
+Fixes
+[Fixed] Issues with toolbar shortcuts.
+[Fixed] Issues with the shape tool when placing sprites in the 2D view.
+[Fixed] Issues with relative data paths.
+[Fixed] Pin issue with rotated brushes.
+
+Prefab World Builder 3.4 Feb 7, 2023
+Features
+[Added] Shortcuts using key combinations for shortcuts that used to only work with the mouse scroll wheel.
+[Added] The brush picker shortcut to the shortcut manager.
+[Added] Shortcuts to move the grid origin up and down in steps.
+[Added] Shortcut to reset brush rotation.
+[Added] Option to the brush tool properties to avoid overlapping with all objects.
+[Added] Avoid overlapping option to pin tool.
+[Added] Functionality to add rotation values to extruded objects.
+
+Changes
+[Moved] Shortcuts from the Unity shortcuts manager to the PWB preferences window.
+Fixes
+[Fixed] Issues caused by saving root directory and data directory as absolute paths. 
+[Fixed] Issues when placing objects on sides when snapping was enabled.
+[Fixed] Replacer tool issue ignoring multi-brush item frequency.
+[Fixed] Issues when edditing a circle shape.
+[Fixed] Circle shape spacing issues.
+[Fixed] Pin issue with rotated brushes.
+
+Prefab World Builder 3.3.2 Jan 19, 2023
+Fixes
+[Fixed] Issue with label creation when adding new brushes.
+[Fixed] Issue with disabling mouse combination shortcuts.
+[Fixed] Issue with gravity tool adding mesh colliders to prefabs.
+[Fixed] Issue with palette tab context menu on macOS.
+
+Prefab World Builder 3.3.1 Jan 9, 2023
+Fixes
+[Fixed] Missing documentation file error.
+[Fixed] Grid position issue when zooming out the camera.
+[Fixed] Issue when reimporting subscenes.
+[Fixed] Grid toggle shortcut issue.
+
+Prefab World Builder 3.3 Jan 2, 2023
+Features
+[Added] Mouse shortcuts to the shortcut manager.
+Fixes
+[Fixed] Error with objects with null meshes.
+[Fixed] Issues when moving the data directory.
+[Fixed] Gravity tool issue with prefabs without collider.
+[Fixed] Issue with line tool when selecting multiple control points.
+
+Prefab World Builder 3.2 Dec 20, 2022
+Features
+[Added] Shortcut manager to the preferences window.
+Changes
+[Improved] "Select Next Palette" shortcut. Now it works in alphabetical order.
+Fixes
+[Fixed] Error when returning to the brush tool after using the eraser.
+[Fixed] Issue with vertex snapping not working on objects without colliders.
+
+Prefab World Builder 3.1 Dec 13, 2022
+Fixes
+[Fixed] Issues with line edit mode.
+[Fixed] Issue with tool properties being reset after entering play mode.
+
+Prefab World Builder 3.0 Dec 07, 2022
+Features
+[Added] Control to define the data directory to the preferences window.
+Fixes
+[Fixed] Issues with duplicated brushes.
+[Fixed] Issues with currupted palette data.
+[Fixed] Issue with the selection tool when snapping is enabled.
+
+Prefab World Builder 3.0 Nov 24, 2022
+Features
+[Added] Gizmos to move the grid origin in steps.
+Fixes
+[Fixed] Issue with thumbnail settings not saving.
+[Fixed] Grid origin position issue when rotated.
+
+Prefab World Builder 2.9 Nov 19, 2022
+Features
+[Added] Shape surface indicator.
+[Added] Shortcut to delete selected persistent item but not its children.
+[Added] Vector field to tool properties to edit current handle position.
+Changes
+[Select next palette] Sprite tumbnails.
+[Improved] Palette data files. Palettes data is now saved in separate files.
+Fixes
+[Fixed] Sprite preview issue. 
+[Fixed] Pin tool issues when placing sprites.
+[Fixed] Issue that prevented the hand/view tool from being enabled while using the selection tool or while editing mode was enabled.
+[Fixed] Issue with selection tool always snapping objects to surface when grid snapping was enabled.
+[Fixed] Issue when undoing after enabling edit mode.
+
+Prefab World Builder 2.8 Oct 20, 2022
+Features
+[Added] Functionality to the grid setting to allow defining the gap between major grid lines.
+[Added] Functionality to randomize rotation only in multiples of a custom value.
+[Added] Option to ignore scene colliders to gravity tool.
+
+Changes
+[Improved] Script imports to avoid namespace conflicts.
+[Changed] The behaviour of the major grid lines, now they stay aligned with the origin point.
+
+Fixes
+[Fixed] Error when undoing after using the brush.
+[Fixed] Documentation button issue.
+
+Prefab World Builder 2.7.2 Sep 21, 2022
+Fixes
+[Fixed] Terrain flattening error.
+[Fixed] Issue syncing palettes between different machines, causing palette data being deleted.
+[Added] Option to disable tiling preview in properties window to avoid slowdown issues.
+[Fixed] Delay issue when undoing.
+[Fixed] Error deleting the first palette.
+[Fixed] Issues placing objects perpendicular to the surface.
+[Fixed] Issues embedding objects on the surface.
+[Fixed] Line spacing issues.
+
+Prefab World Builder 2.7.1 Sep 21, 2022
+Changes
+[Changed] Multibrush item frecuency now allows to put a decimal point.
+[Changed] Some shortcuts to avoid conflicts with Unity 2022 and on Mac platforms.
+Fixes
+[Fixed] Issue with objects with only one side visible.
+[Fixed] Switcing tools issue that caused the save changes dialog to be displayed unnecessarily.
+
+Prefab World Builder 2.7 Sep 14, 2022
+Features
+[Added] Line surface indicator.
+[Added] Functionality to restore palettes from prefab file paths to prevent data from being wiped after re-import
+[Added] Shortcut to delete persistent items.
+Changes
+[Changed] Brush picker shortcut.
+Fixes
+[Fixed] Brush tool issue when using the square shape. The issue was triggering an IndexOutOfRange exception.
+[Fixed] Issue when undoing in unity 2021.3.9f1
+[Fixed] Issue with TextMeshPro objects without collider.
+[Fixed] Issue that allowed interaction with triggers.
+[Fixed] Issue with temporary colliders re-appearing.
+[Fixed] Issue preventing tiling tool properties from being changed in edit mode.
+
+Prefab World Builder 2.6 Aug 30, 2022
+Features
+[Added] List View to prefab palette.
+[Added] Option to show and hide the name of the brushes in grid view.
+[Added] Functionality to sort the brushes in ascending or descending alphabetical order.
+[Added] Option to preferences window to select the thumbnail layer.
+
+Prefab World Builder 2.5.1 Aug 26, 2022
+Fixes
+[Added] Option to disable brushstroke preview in properties window to avoid slowdown issues.
+
+Prefab World Builder 2.5 Aug 22, 2022
+Features
+[Added] Persistent mosaic data.
+[Added] Terrain layer filter to brush tool.
+Changes
+[Removed] Functionality to undo changes in the tool properties window.
+
+Prefab World Builder 2.4.2 Aug 1, 2022
+Changes
+[Improved] Palette window. Now the list of palettes is sorted alphabetically.
+Fixes
+[Fixed] Palette thumbnails issue when using HDRP.
+
+Prefab World Builder 2.4.1 Jun 25, 2022
+Changes
+[Changed] Brush picker shortcut.
+Fixes
+[Fixed] Issue causing a crash when adding a brush from a prefab with monobehaviors with circular references in their requirements.
+
+Prefab World Builder 2.4 Jun 3, 2022
+Features
+[Added] Functionality to allow selecting a parent object before categorizing by palette, tool or brush.
+[Added] Customizable shortcut to close all windows.
+[Added] Functionality to edit control points of several lines at the same time.
+Fixes
+[Fixed] Issue that called Awake on palette objects when entering play mode.
+[Fixed] Selection tool issue when snapping to grid.
+[Fixed] Lag issue after deleting a line or a shape.
+
+Prefab World Builder 2.3.1 May 12, 2022
+Fixes
+[Fixed] Line spacing issue with constant spacing values.
+[Fixed] Pin tool issue causing long pause after flattening terrain.
+[Fixed] Yellow screen issue when placing particle systems.
+
+Prefab World Builder 2.3 May 6, 2022
+Features
+[Added] Shortcut to select next palette.
+Changes
+[Improved] Pin tool rotation. Rotation now does not reset after releasing an object and rotating it again.
+Fixes
+[Fixed] Pin tool issue mistakenly placing items when rotating the scene.
+
+Prefab World Builder 2.2 May 4, 2022
+Features
+[Added] Preference value to change the size of control points.
+Fixes
+[Fixed] Conflict in pin tool between the shortcut to change the distance from surface and the shortcut to rotate around x-axis.
+
+Prefab World Builder 2.1 May 3, 2022
+Features
+[Added] Preference value to change the size of control points.
+Fixes
+[Fixed] Conflict in pin tool between the shortcut to change the distance from surface and the shortcut to rotate around x-axis.
+
+Prefab World Builder 2.0
+Features
+[Added] Persistent shape data.
+[Added] Pin shortcuts to rotate around X and Z axis.
+[Added] Funtionallity to add new brushes using the picker.
+[Added] Shortcuts to toggle grid, snapping and grid lock.
+[Added] Shortcuts to set the grid cell size, origin an rotation to match the selected object.
+[Added] Shortcut to select the spline or shape parent.
+Changes
+[Improved] Brush Picker shortcut.
+[Changed] When pessing Esc it doesn't ask to save changes.
+[Im]
+Fixes
+[Fixed] lag issues in all tools.
+[Fixed] Issue saving data after editing lines.
+
+Prefab World Builder 1.9 Mar 2, 2022
+Features
+[Added] Seleccion filters to selection tools.
+[Added] Overwrite brush properties settings to replacer tool.
+Fixes
+[Fixed] Issue in tool overlays when changing tools.
+[Fixed] Replacer tool issue ignoring the rotation defined in brush properties.
+[Fixed] Preview flickering issue
+
+Prefab World Builder 1.8.1 Feb 23, 2022
+Changes
+[Changed] Organization of directories to make it easier to create assembly definitions.
+[Added] Popup list to preferences window to choose what action to take on unsaved changes: Ask to save, save or discard.
+Fixes
+[Fixed] Issue in tool overlays not displaying unsaved changes dialog when changing tools.
+
+Prefab World Builder 1.8 Feb 21, 2022
+Features
+[Added] Message box to ask whether to save unsaved changes or not.
+[Added] checkbox to line and shape settings to place objects parallel to the surface.
+[Added] more options to create subparents.
+Changes
+[Improved] Some shortcuts to avoid collisions with other editor shortcuts.
+
+Prefab World Builder 1.7 Feb 9, 2022
+Features
+[Added] Persistent line data.
+[Added] Ramdomness slider to brush and gravity tools.
+[Added] Preferences window.
+Fixes
+[Fixed] Gravity tool issue with complex meshes.
+[Fixed] Missplacement issue in replacer tool.
+[Fixed] Negative gap issue in line tool.
+
+Prefab World Builder 1.6 Jan 14, 2022
+Features
+[Added] Option to eraser tool to allow erasing only the closest object.
+[Added] Option to replacer tool to allow replacing only the closest object.
+[Added] Vertex snapping to terrain corners to selection tool.
+[Added] Functionality to create a multi-brush from a selection of brushes.
+Fixes
+[Fixed] Issue with snapping and selection tool.
+[Fixed] Duplicate brush thumbnail issue.
+
+Prefab World Builder 1.5.3 Jan 3, 2022
+Fixes
+[Fixed] Undo issue in unity 2021.2.
+
+Prefab World Builder 1.5.2 Nov 29, 2021
+Fixes
+[Fixed] Issue with tool profiles not being saved.
+
+Prefab World Builder 1.5.1 Nov 21, 2021
+Fixes
+[Fixed] Issue changing unity version causing data loss from palettes and tools.
+[Fixed] Issues with missing prefabs.
+[Fixed] defect in the previous/next buttons of thumbnail editor.
+
+Prefab World Builder 1.5 Nov 17, 2021
+Features
+[Added] Terrain flattening functionality to pin tool.
+
+Prefab World Builder 1.4.1 Nov 9, 2021
+Fixes
+[Fixed] Issues with ovelay panels in Unity 2021.2.
+
+Prefab World Builder 1.4 Nov 4, 2021
+Features
+[Added] Thumbnail editor.
+[Added] Tools overlay panels in the scene view window. (Unity 2021.2 or higher)
+
+Prefab World Builder 1.3 Oct 19, 2021
+Features
+[Added] "Replace All Selected" button to Replace tool properties.
+[Added] "Embed Pivot Height" toggle button to brush properties.
+[Added] Functionality to overwrite brush properties to tools properties window.
+[Added] Documentation button to toolbar.
+[Added] "Create sub-parent per prefab" toggle button to tool properties.
+[Added] Rotation handle to shape tool.
+Changes
+[Improved] shortcuts. Now you can place objects (left click) without having to release modifier keys (shift, ctrl).
+Fixes
+[Fixed] Issue with negative spaces in the shape tool.
+[Fixed] Problem with the initial axis direction in shape tool.
+
+Prefab World Builder 1.2.1 Oct 11, 2021
+[Fixed] Palette flickering issue.
+
+Prefab World Builder 1.2 Oct 6, 2021
+Features
+[Added] Line midpoint hint.
+[Added] Brush picker.
+[Added] Gravity shortcut to edit height.
+[Added] Radius slider to brush, gravity and eraser tool properties.
+[Added] Outermost prefab filter toggle to eraser and replacer tools properties.
+[Added] Default icon for brushes with empty prefabs or no renderer.
+[Added] Alternative shortcut to edit tool radius (Shift + Hold right mouse button + Move mouse horizontally)
+Changes
+[Improved] Range fields. Now the range between the two values is used without specifying which value is the minimum or maximum.
+[Changed] Default shortcuts for tools to improve the usability on mac devices.
+Fixes
+[Fixed] Toggle rotate to surface in selection properties.
+[Fixed] Pin tool issue. Scale and rotation values were reset after painting an object.
+[Fixed] bug that prevented drawing on terrain.
+[Fixed] Issues with empty prefabs and no renderer.
+[Fixed] Grid spacing issue.
+[Fixed] Issue when changing the value of the Pattern in multi-brush.
+[Fixed] Shape tool issue ignoring the brush scale multiplier.
+[Fixed] Replacer tool bug when replacing children of prefab instances.
+[Fixed] Preview of the eraser tool on the children of prefab instances.
+[Fixed] Gravity tool issue causing objects to float in midair.
+
+Prefab World Builder 1.1 Oct 1, 2021
+Features
+[Added] Radial Grid.
+[Added] Functionality to merge brushes.
+[Added] Functionality to embed objects in the surface while moving the selection.
+[Added] Functionality to embed objects in the surface to Mirror and Extrude tools.
+[Added] A toggle to the brush tool properties to randomize or not the positions within the brush area.
+[Added] A shortcut to the brush and gravity tools to rotate the brush area.
+[Added] Square shape to the brush and gravity tools.
+[Added] Gravity simulation animation.
+[Added] Replacer Tool.
+Fixes
+[Fixed] Issue when selecting multiple line points.
+[Fixed] Pin tool issue when enabling paint on grid and embed in surface.
+[Fixed] Selection controls not updating after moving to another selection control.
+[Fixed] Tile rotation issues.
+[Fixed] Brush tool issue when undoing tool property changes.
+[Fixed] Gravity tool issue where two objects were instantiated on the first brushstroke instead of one.
+
+Prefab World Builder 1.0 Sept 29, 2021
