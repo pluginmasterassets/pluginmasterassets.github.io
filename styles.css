@@ -368,7 +368,7 @@ a:hover {
 .quick-link {
     font-size: 13px;
     font-weight: 500;
-    color: var(--accent-blue);
+    color: #ffffff;
     transition: background-color 0.2s ease, color 0.2s ease;
     padding: 6px 12px;
     border-radius: var(--radius-sm);
@@ -380,7 +380,7 @@ a:hover {
 }
 
 .link-separator {
-    color: var(--border-color);
+    color: var(--accent-blue);
     font-weight: 300;
 }
 
