@@ -1,21 +1,31 @@
 /* ============================================
-   CSS Variables - Dark Theme Color Palette
+   Fonts
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ============================================
+   CSS Variables - Sober Dark Slate Palette
    ============================================ */
 :root {
-    /* Plugin Master brand palette */
-    --primary-bg: #000d17;
-    --secondary-bg: #001621;
-    --tertiary-bg: #00202e;
-    --primary-text: #dce8ed;
-    --secondary-text: #5e8a9e;
-    --accent-blue: #eb662e;    /* brand orange — primary accent */
-    --accent-green: #2cb5d4;   /* brand teal — secondary accent  */
-    --accent-orange: #f08040;  /* warm highlight for labels       */
-    --border-color: #062436;
-    --hover-color: #c94f1c;    /* darker orange for hover         */
-    --navbar-top-height: 52px;
-    --navbar-bottom-height: 44px;
-    --navbar-height: calc(var(--navbar-top-height) + var(--navbar-bottom-height));
+    /* Plugin Master brand palette — sober, navy-tinted slate */
+    --primary-bg: #0b1622;     /* deep slate — page background      */
+    --secondary-bg: #101f2e;   /* raised surface / navbar           */
+    --tertiary-bg: #16293a;    /* cards, inputs, quiet panels       */
+    --primary-text: #e6edf3;   /* high-contrast body text           */
+    --secondary-text: #8ba0b2; /* muted text                        */
+    --accent-blue: #eb662e;    /* brand orange — single accent      */
+    --accent-green: #4aa9c4;   /* desaturated teal — quiet highlight */
+    --accent-orange: #f08040;  /* warm highlight for labels         */
+    --border-color: #22384b;   /* subtle hairline borders           */
+    --hover-color: #d2551f;    /* darker orange for hover           */
+    --surface-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --surface-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --navbar-top-height: 56px;
+    --navbar-bottom-height: 0px;
+    --navbar-height: var(--navbar-top-height);
 }
 
 /* ============================================
@@ -32,16 +42,18 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
     background-color: var(--primary-bg);
     color: var(--primary-text);
-    line-height: 1.6;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 a {
     color: var(--accent-blue);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 a:hover {
@@ -57,7 +69,8 @@ a:hover {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #001621;
+    background-color: var(--secondary-bg);
+    backdrop-filter: saturate(140%) blur(8px);
 }
 
 /* ---- Top row ---- */
@@ -65,7 +78,7 @@ a:hover {
     height: var(--navbar-top-height);
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(235, 102, 46, 0.25);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar-top-inner {
@@ -117,49 +130,10 @@ a:hover {
     color: #ffffff;
 }
 
-.navbar-utility {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.btn-store {
-    background-color: var(--accent-blue);
-    color: #ffffff !important;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 7px 18px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.btn-store:hover {
-    background-color: var(--hover-color);
-    color: #ffffff !important;
-}
-
-/* ---- Bottom row ---- */
-.navbar-bottom {
-    height: var(--navbar-bottom-height);
-    display: flex;
-    align-items: center;
-    background-color: #000d17;
-    border-bottom: 1px solid rgba(235, 102, 46, 0.15);
-}
-
-.navbar-bottom-inner {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
 .nav-menu {
     display: flex;
     list-style: none;
-    height: var(--navbar-bottom-height);
+    height: var(--navbar-top-height);
     gap: 0;
     margin: 0;
     padding: 0;
@@ -169,10 +143,10 @@ a:hover {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 16px;
-    color: #6a96aa;
+    padding: 0 18px;
+    color: var(--secondary-text);
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 500;
     white-space: nowrap;
     position: relative;
     transition: color 0.2s ease;
@@ -230,14 +204,13 @@ a:hover {
 @media (max-width: 768px) {
     :root {
         --navbar-top-height: 48px;
-        --navbar-bottom-height: 0px;
     }
 
     .menu-toggle {
         display: flex;
     }
 
-    .navbar-bottom {
+    .nav-menu {
         display: none;
     }
 }
@@ -329,8 +302,8 @@ a:hover {
    Hero Section
    ============================================ */
 .hero-section {
-    background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--tertiary-bg) 100%);
-    padding: 60px 20px;
+    background-color: #ffffff;
+    padding: 96px 24px;
     min-height: calc(100vh - var(--navbar-height));
     display: flex;
     align-items: center;
@@ -342,14 +315,23 @@ a:hover {
     width: 100%;
 }
 
+.hero-title {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #0b1622;
+    margin-bottom: 24px;
+}
+
 .video-container {
     width: 100%;
     aspect-ratio: 16 / 9;
-    margin-bottom: 40px;
-    border-radius: 12px;
+    margin-bottom: 56px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid var(--border-color);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--surface-shadow-lg);
 }
 
 .hero-video {
@@ -359,11 +341,12 @@ a:hover {
 }
 
 .hero-description {
-    font-size: 16px;
-    color: var(--primary-text);
+    font-size: 17px;
+    color: #4a5b69;
     text-align: center;
     line-height: 1.8;
-    margin-bottom: 40px;
+    max-width: 760px;
+    margin: 0 auto 48px;
     padding: 0 20px;
 }
 
@@ -375,10 +358,10 @@ a:hover {
     justify-content: center;
     align-items: center;
     gap: 4px;
-    flex-wrap: nowrap;
-    padding: 6px 16px;
-    background-color: var(--tertiary-bg);
-    border-radius: 6px;
+    flex-wrap: wrap;
+    padding: 10px 18px;
+    background-color: var(--secondary-bg);
+    border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
 }
 
@@ -386,9 +369,9 @@ a:hover {
     font-size: 13px;
     font-weight: 500;
     color: var(--accent-blue);
-    transition: all 0.2s ease;
-    padding: 4px 8px;
-    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
 }
 
 .quick-link:hover {
@@ -397,7 +380,7 @@ a:hover {
 }
 
 .link-separator {
-    color: var(--secondary-text);
+    color: var(--border-color);
     font-weight: 300;
 }
 
@@ -406,7 +389,7 @@ a:hover {
    ============================================ */
 .changelog-section {
     background-color: var(--primary-bg);
-    padding: 60px 20px;
+    padding: 96px 24px;
 }
 
 .changelog-container {
@@ -415,46 +398,50 @@ a:hover {
 }
 
 .changelog-section h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 48px;
     text-align: center;
-    color: var(--accent-blue);
+    color: var(--primary-text);
 }
 
 .changelog-entry {
-    background-color: var(--secondary-bg);
+    background-color: var(--tertiary-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 30px;
-    margin-bottom: 30px;
-    transition: box-shadow 0.3s ease;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    margin-bottom: 28px;
+    box-shadow: var(--surface-shadow);
+    transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
 .changelog-entry:hover {
-    box-shadow: 0 4px 20px rgba(235, 102, 46, 0.18);
-    border-color: var(--accent-blue);
+    box-shadow: var(--surface-shadow-lg);
+    border-color: var(--secondary-text);
+    transform: translateY(-2px);
 }
 
 .version-title {
-    font-size: 22px;
-    color: var(--accent-green);
-    margin-bottom: 25px;
+    font-size: 20px;
+    color: var(--primary-text);
+    margin-bottom: 24px;
     font-weight: 600;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
 }
 
 .changelog-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    gap: 20px;
 }
 
 .category {
-    padding: 15px;
-    background-color: rgba(235, 102, 46, 0.06);
-    border-left: 4px solid var(--accent-blue);
-    border-radius: 4px;
+    padding: 18px;
+    background-color: var(--secondary-bg);
+    border-left: 3px solid var(--accent-blue);
+    border-radius: var(--radius-sm);
 }
 
 .category-title {
@@ -488,7 +475,7 @@ a:hover {
     color: var(--primary-text);
     font-size: 14px;
     line-height: 1.6;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .change-list li:hover {
@@ -505,9 +492,9 @@ a:hover {
    Footer
    ============================================ */
 .footer {
-    background-color: var(--tertiary-bg);
+    background-color: var(--secondary-bg);
     border-top: 1px solid var(--border-color);
-    padding: 30px 20px;
+    padding: 48px 24px;
     text-align: center;
 }
 
@@ -519,11 +506,11 @@ a:hover {
 .footer-container p {
     color: var(--secondary-text);
     font-size: 14px;
-    margin: 5px 0;
+    margin: 6px 0;
 }
 
 .footer-container p:first-child {
-    color: var(--accent-blue);
+    color: var(--primary-text);
     font-weight: 600;
 }
 
@@ -533,20 +520,23 @@ a:hover {
 @media (max-width: 768px) {
     :root {
         --navbar-top-height: 48px;
-        --navbar-bottom-height: 40px;
     }
 
     .hero-section {
-        padding: 40px 20px;
+        padding: 64px 20px;
         min-height: auto;
     }
 
+    .hero-title {
+        font-size: 28px;
+    }
+
     .hero-description {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .changelog-section {
-        padding: 40px 20px;
+        padding: 64px 20px;
     }
 
     .changelog-section h2 {
@@ -664,25 +654,25 @@ a:hover {
     padding: 40px 0;
 }
 
-/* Features — teal */
+/* Features — quiet teal */
 .category--features {
-    background-color: rgba(44, 181, 212, 0.07);
+    background-color: var(--secondary-bg);
     border-left-color: var(--accent-green);
 }
 .category--features .category-title { color: var(--accent-green); }
 .category--features .category-title::before { background-color: var(--accent-green); }
 
-/* Changes — purple */
+/* Changes — muted slate-violet */
 .category--changes {
-    background-color: rgba(148, 103, 210, 0.07);
-    border-left-color: #9467d2;
+    background-color: var(--secondary-bg);
+    border-left-color: #8b85b5;
 }
-.category--changes .category-title { color: #9467d2; }
-.category--changes .category-title::before { background-color: #9467d2; }
+.category--changes .category-title { color: #a39ec7; }
+.category--changes .category-title::before { background-color: #8b85b5; }
 
-/* Fixes — orange (brand accent, already default) */
+/* Fixes — brand orange (default accent) */
 .category--fixes {
-    background-color: rgba(235, 102, 46, 0.07);
+    background-color: var(--secondary-bg);
     border-left-color: var(--accent-blue);
 }
 .category--fixes .category-title { color: var(--accent-blue); }
