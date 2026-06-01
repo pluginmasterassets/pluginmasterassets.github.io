@@ -1,22 +1,44 @@
+<!-- Hero Section -->
 <main class="hero-section">
     <div class="hero-container">
-        <h1 class="hero-title">Transform Tools</h1>
+        <div class="video-container">
+            <iframe 
+                class="hero-video" 
+                src="https://www.youtube.com/embed/EBsUNXYQ1t4" 
+                title="Transform Tools Demo"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
         <p class="hero-description">
-            Transform Tools is a Unity3D editor extension for precise object manipulation. Coming soon.
+            Transform Tools is a Unity3D editor extension for precise object manipulation. Align, distribute, arrange, randomize, and simulate gravity to lay out your scenes faster.
         </p>
+
+        <!-- Quick Links Bar -->
         <div class="quick-links">
-            <a href="#store" class="quick-link">Store</a>
+            <a href="https://assetstore.unity.com/packages/slug/177218" class="quick-link">Store</a>
             <span class="link-separator">|</span>
-            <a href="#docs" class="quick-link">Documentation</a>
+            <a href="pages\TT\TransformToolsDocumentation.pdf" class="quick-link" target="_blank" rel="noopener noreferrer">Documentation</a>
             <span class="link-separator">|</span>
-            <a href="#forum" class="quick-link">Support Forum</a>
+            <a href="https://forum.unity.com/threads/transform-tools.954279/" class="quick-link">Support Forum</a>
+            <span class="link-separator">|</span>
+            <a href="https://discord.gg/2x8zmS5Q" class="quick-link">Discord Server</a>
+            <span class="link-separator">|</span>
+            <a href="#tt-changelog" class="quick-link">Version History</a>
         </div>
     </div>
 </main>
 
+<!-- Changelog Section -->
 <section class="changelog-section">
-    <div class="changelog-container">
+    <div class="changelog-container" id="tt-changelog"
+         data-changelog-src="pages/TT/TTChangeLog.txt"
+         data-product-name="Transform Tools">
         <h2>Version History</h2>
-        <p style="color: var(--secondary-text);">Changelog coming soon.</p>
+        <p class="changelog-loading">Loading...</p>
     </div>
 </section>
+
+<script src="pages/scripts/changelog.js"></script>

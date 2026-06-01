@@ -1,0 +1,161 @@
+Transform Tools 2.3.1 May 18, 2026
+Fixes
+[Fixed] Project Auditor Warnings. Resolved multiple warnings flagged by Unity's Project Auditor.
+
+Transform Tools 2.3.0 Apr 15, 2026
+Features
+[Added] Constant Values in Randomize Tools. Added the ability to apply constant values without randomization in the Randomize Scale and Randomize Positions tools.
+[Added] Scene View Overlay. Transform Tools can now be accessed and toggled directly within the Scene view using the Unity Overlays menu.
+Fixes
+[Fixed] Unity 6.4 Compatibility. Fixed warnings regarding obsolete methods.
+
+Transform Tools 2.2.10 Mar 14, 2026
+Fixes
+[Fixed] Primitive Mesh Detection. Improved IsPrimitive logic in MeshUtils to correctly identify primitive meshes.
+
+Transform Tools 2.2.9 Mar 2, 2026
+Changes
+[Improved] Compatibility with Prefab World Builder 4.10.0.
+
+Transform Tools 2.2.8 Jul 21, 2025
+Changes
+[Improved] Compatibility with Prefab World Builder 4.8.
+
+Transform Tools 2.2.7 May 15, 2025
+Changes
+[Improved] Compatibility with Prefab World Builder 4.7.
+
+Transform Tools 2.2.6 Apr 18, 2025
+Changes
+[Improved] General optimizations and performance enhancements.
+
+Transform Tools 2.2.5 Sep 30, 2024
+Changes
+[Improved] Compatibility with Unity 6.
+
+Transform Tools 2.2.4 Jun 2, 2023
+Fixes
+[Fixed] Issues calculating bounds of objects with LOD.
+
+Transform Tools 2.2.3 Feb 20, 2023
+Fixes
+[Fixed] Issue with placing objects on the surface when the objects were below the surface.
+
+Transform Tools 2.2.2 Jan 5, 2023
+Fixes
+[Fixed] Issue with the distribution tool when making equal gaps.
+
+Transform Tools 2.2.1 Nov 20, 2022
+Fixes
+[Fixed] issues arranging sprites.
+
+Transform Tools 2.2 Oct 20, 2022
+Features
+[Added] Option to ignore scene colliders to gravity tool.
+Changes
+[Improved] Script imports to avoid namespace conflicts.
+
+Transform Tools 2.1 Sep 14, 2022
+Features
+[Added] Functionality to the align tools to allow choosing between local and global space when aligning relative to an object.
+[Added] functionality to the radial arrangement tool that allows you to choose between local and global spacing when rotating around an object.
+
+Transform Tools 2.0 Mar 21, 2022
+Features
+[Added] Topmost filter toggle to the remove overlap tool.
+Fixes
+[Fixed] Issue in the grid arrangement tool that was always overwriting positions on all axes.
+
+Transform Tools 1.12.1 Mar 7 2022
+Fixes
+[Fixed] Issue with runtime function to place objects on surface.
+
+Transform Tools 1.12 Mar 2, 2022
+Features
+[Added] Auto-spacing setting for grid arranging feature. When the selected objects have a common parent which is RectTransform, divides the available space to distribute the objects evenly.
+Fixes
+[Fixed] Grid arrange issue giving different layouts when applied repeatedly.
+
+Transform Tools 1.11.5 Feb 23, 2022
+Changes
+[Changed] Organization of directories to make it easier to create assembly definitions.
+
+Transform Tools 1.11.4 Feb 21, 2022
+Changes
+[Optimized] Functions to compute object bounds.
+
+Transform Tools 1.11.3 Feb 9, 2022
+Fixes
+[Fixed] Issues with complex meshes when simulating gravity.
+
+Transform Tools 1.11.2 Jan 14, 2022
+Fixes
+[Fixed] Terrain component issues.
+
+Transform Tools 1.11.1 Dec 13, 2021
+Fixes
+[Fixed] Conflict with Prefab World Builder.
+
+Transform Tools 1.11 Oct 11, 2021
+Fixes
+[Fixed] Pivot editing issues.
+[Fixed] Issue when removing overlapping.
+
+Transform Tools 1.10 Oct 6, 2021
+Changes
+[Improved] Range fields. Now the range between the two values is used without specifying which value is the minimum or maximum.
+
+Transform Tools 1.9 Sep 27, 2021
+Features
+[Added] Gravity simulation animation.
+
+Transform Tools 1.8 2021 Jun 13, 2021
+Features
+[Added] Dark theme.
+
+Transform Tools 1.7 Apr 1, 2021
+Fixes
+[Fixed] bug in TTRuntime.PlaceOnSurface.
+
+Transform Tools 1.6 Feb 24, 2021
+Features
+[Added] functionality to the Grid Arrangement tool that allows you to choose the alignment property: Bounding Box or Object Pivot.
+[Added] functionality to the Grid Arrangement tool that allows you to define how objects are positioned: relative to the selection bounds or relative to the position of the first object.
+
+Transform Tools 1.5 Feb 17, 2021
+Fixes
+[Fixed] TTRuntime error calling UnityEditor.Undo.
+[Fixed] Sorting by hierarchy order.
+
+Transform Tools 1.4 January 18, 2021
+Features
+[Added] Commands to Unity Shortcut Manager.
+[Added] Functionality to homogenize spacings, rotations and scales.
+[Added] Multiplier value to Randomize windows.
+[Added] Functionality to the Circle Arrangement tool to calculate the radius from the spacing.
+Fixes
+[Fixed] Problem when placing objects in meshes without collider.
+
+Transform Tools 1.3 Jan 6, 2021
+Features
+[Added] Functionality to simulate gravity.
+[Added] Runtime support.
+
+Transform Tools 1.2 Dec 28, 2020
+Features
+[Added] Functionality to align items relative to canvas.
+[Added] Functionality to place objects on surfaces without collider.
+[Improved] Button size. They are smaller now.
+Fixes
+[Deleted] Pivot Monobehaviour. Now there are no scripts that bundle with builds.
+
+Transform Tools 1.1 Sep 2, 2020
+Features
+[Added] Support for Unity 2018.
+[Added] Align tools toggle to enable/disable the topmost transform filter. When selected, children of any selected transform are filtered out.
+[Added] Align property pop-up selection field. Allows you to select between bounding box, object center, or object pivot. Applies to all selected objects except the anchor.
+Fixes
+[Fixed] Bug where "Align bottom edges of objects with the top edge of anchor" didn't work.
+[Fixed] Issue when the orient to center option was selected in the radial arrangement tool.
+
+Transform Tools 1.0 Aug 25, 2020
