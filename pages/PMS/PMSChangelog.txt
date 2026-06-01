@@ -1,0 +1,216 @@
+Play Mode Save 4.1.7 May 18, 2026
+Fixes
+[Fixed] Project Auditor Warnings. Resolved multiple warnings flagged by Unity's Project Auditor.
+
+Play Mode Save 4.1.6 Mar 27, 2026
+Fixes
+[Fixed] Unity 6.4 Compatibility. Fixed warnings regarding obsolete methods.
+[Fixed] Resolved a critical bug causing unintended deletion of GameObjects upon exiting play mode, along with internal fixes for object resolution and deletion queue processing.
+
+Play Mode Save 4.1.5 Mar 14, 2026
+Fixes
+[Fixed] Duplicate objects after saving in Play Mode. Fixed an issue where saving changes would create a duplicate instead of updating the original object.
+
+Play Mode Save 4.1.4 Jan 18, 2026
+Fixes
+[Fixed] Unity 6.3 Compatibility. Resolved a compilation error regarding Cinemachine integration.
+
+Play Mode Save 4.1.3 Jan 18, 2026
+Fixes
+[Fixed] compatibility issue with Unity 6.3 that caused errors when saving component changes.
+
+Play Mode Save 4.1.2 Jan 14, 2026
+Fixes
+[Fixed] Unity 6.3 Compatibility. Resolved compilation errors when running on Unity 6.3.
+
+Play Mode Save 4.1.1 Jan 1, 2026
+Fixes
+[Fixed] Unity 6.3 Compatibility. Resolved several warnings regarding the use of obsolete methods when running on Unity 6.3 or higher.
+
+Play Mode Save 4.1 Aug 15, 2025
+Features
+[Added] Component Save List Window. Adds an editor interface to track which components of an object are saved during PlayMode. Lets you view save status, remove tracked components, and apply changes to individual components in Edit Mode.
+[Added] Support for saving and restoring the active state of GameObjects during PlayMode.
+Fixes
+[Fixed] Editor slowdowns and crashes when saving objects with large hierarchies in Unity 6.
+
+Play Mode Save 4.0.1 Apr 18, 2025
+Fixes
+[Fixed] Issue with serialized component references after saving changes. When multiple components of the same type were attached to a single GameObject, saving changes caused all serialized references to point incorrectly to the first instance of the component.
+
+Play Mode Save 4.0 Dec 10, 2024
+Features
+[Added] Ability to selectively apply changes with the Select Changes to Apply window. This feature allows you to choose specific properties to save.
+
+Play Mode Save 3.9.4 Nov 05, 2024
+Fixes
+[Fixed] Issues with duplicated objects.
+
+Play Mode Save 3.9.3 Aug 13, 2024
+Fixes
+[Fixed] Issues with cinemachine versions newer than 3.0 
+
+Play Mode Save 3.9.2 May 02, 2023
+Fixes
+[Fixed] Issues with DontDestroyOnLoad objects. 
+
+Play Mode Save 3.9.1 Feb 01, 2023
+Fixes
+[Fixed] Issue with cinemachine versions older than 2.8
+
+Play Mode Save 3.9 Jan 17, 2023
+Features
+[Added] Functionality to save Tilemaps Components.
+Fixes
+[Fixed] Issue with URP projects on unity 2021.1 or earlier.
+
+Play Mode Save 3.8 Jan 16, 2023
+Features
+[Added] Functionality to show/hide the save indicator.
+[Added] Functionality to change the color of the save indicator.
+[Added] Functionality to save Cinemachine Virtual Camera Component.
+Fixes
+[Fixed] Issue with 2D lights.
+
+Play Mode Save 3.7.7 Jan 3, 2023
+Fixes
+[Fixed] Error with null references.
+
+Play Mode Save 3.7.6 Dec 8, 2022
+Fixes
+[Fixed] Issue with sprite renderers.
+
+Play Mode Save 3.7.5 Nov 21, 2022
+Fixes
+[Fixed] Issue applying changes to unloaded scenes.
+[Fixed] Issue ignoring changes made to Sorting Group components.
+
+Play Mode Save 3.7.4 Sep 27, 2022
+Fixes
+[Fixed] Issue with loaded scenes causing object references to be deleted.
+
+Play Mode Save 3.7.3 Sep 26, 2022
+Fixes
+[Fixed] Issue with loaded scenes preventing changes from being applied
+[Fixed] Object clone creation issue when saving changes made to loaded scenes.
+[Fixed] Issue with components with lots of properties.
+
+Play Mode Save 3.7.2 Aug 1, 2022
+Fixes
+[Fixed] Issue saving object hierarchies created in play mode.
+
+Play Mode Save 3.7.1 Jul 7, 2022
+Fixes
+[Fixed] Issue saving child prefab instances created in play mode.
+
+Play Mode Save 3.7 Jun 16, 2022
+Features
+[Added] functionality to save component removal on spawned prefab instances in play mode.
+
+Play Mode Save 3.6.2 Apr 25, 2022
+Fixes
+[Fixed] Issue saving prefab instances created in play mode.
+
+Play Mode Save 3.6.1 Mar 7, 2022
+Fixes
+[Fixed] Issue adding objects created in play mode to the save list.
+
+Play Mode Save 3.6 Feb 9, 2022
+Features
+[Added] Functionality to save the sorting layer property on SpriteShapeRenderers and on ParticleSystemRenderers.
+
+Play Mode Save 3.5.7 Jan 3, 2022
+Fixes
+[Fixed] Issue saving objects created in play mode.
+
+Play Mode Save 3.5.6 Dec 27, 2021
+Fixes
+[Fixed] Issue saving objects created in play mode.
+
+Play Mode Save 3.5.5 Dec 23, 2021
+Fixes
+[Fixed] Issue saving components on objects with large hierarchies.
+
+Play Mode Save 3.5.4 Dec 20, 2021
+Fixes
+[Fixed] Issue saving prefab instances in loaded scenes.
+
+Play Mode Save 3.5.3 Dec 6, 2021
+Fixes
+[Fixed] Issue saving instances of nested prefabs created in play mode.
+
+Play Mode Save 3.5.2 Nov 21, 2021
+Fixes
+[Fixed] Issue with material instances.
+
+Play Mode Save 3.5.1 Nov 17, 2021
+Fixes
+[Fixed] Performance Issues when displaying save indicator.
+
+Play Mode Save 3.5 Nov 9, 2021
+Features
+[Added] "Save Entire Hierarchy" toggle.
+Changes
+[Removed] Auto-Save.
+Fixes
+[Fixed] Issues when applying changes manually.
+
+Play Mode Save 3.4.1 Oct 26, 2021
+Fixes
+[Fixed] issue with the objects in the persistent save list when building the game.
+[Fixed] issue deleting objects in the persistent save list while in play mode.
+
+Play Mode Save 3.4 Oct 19, 2021
+Features
+[Added] Functionality to save components created in play mode.
+[Added] Functionality to save gameobjects with components removed in play mode.
+[Added] Toggle button to include or not children when executing actions for all selected objects.
+Fixes
+[Fixed] Issue when using "save all components now" wich added components to the persistent save list.
+
+Play Mode Save 3.3 Sep 20, 2021
+Fixes
+[Fixed] Issue when saving objects created in play mode.
+[Fixed] Issue when saving cloth components.
+
+Play Mode Save 3.2 Sep 9, 2021​
+Features
+[Added] Functionality to save objects created in play mode.
+
+Play Mode Save 3.1 Aug 17, 2021
+Fixes
+[Fixed] Issue saving data in new scenes loaded in play mode.
+
+Play Mode Save 3.0 Jun 30, 2021
+Features
+[Added] Persistence of the save list between sessions.
+[Added] Functionality to save all components in objects and hierarchies.
+[Added] Feature that displays a message on the console with the list of components being saved when the save indicator is clicked.
+
+Play Mode Save 2.3 Jun 22, 2021
+Features
+[Added] Always Save Functionality.
+
+Play Mode Save 2.2 Mar 19, 2021
+Features
+[Added] Auto-Save Functionality.
+[Added] Functionality to save the sorting layer property on SpriteRenderer components.
+Fixes
+[Fixed] Issues when saving and loading editor preferences.
+
+Play Mode Save 2.1 Jan 19, 2021
+Features
+[Added] Functionality to save SciptableObjects.
+
+Play Mode Save 2.0 Nov 4, 2020
+Features
+[Added] Now it works for all components.
+[Added] Save When Exiting Play mode.
+[Added] Save indicator.
+[Added] Save auto-apply preference between sessions.
+
+Play Mode Save 1.1 Sep 1, 2020
+Features
+[Added] RectTransform Support.
+
+Play Mode Save 1.0 Aug 28, 2020
