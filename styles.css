@@ -202,10 +202,6 @@ a:hover {
 
 /* ---- Mobile ---- */
 @media (max-width: 768px) {
-    :root {
-        --navbar-top-height: 48px;
-    }
-
     .menu-toggle {
         display: flex;
     }
@@ -603,10 +599,6 @@ a:hover {
    Responsive Design - Tablet
    ============================================ */
 @media (max-width: 768px) {
-    :root {
-        --navbar-top-height: 48px;
-    }
-
     .hero-section {
         padding: 64px 20px;
         min-height: auto;
