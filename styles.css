@@ -23,7 +23,7 @@
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 14px;
-    --navbar-top-height: 56px;
+    --navbar-top-height: 74px;
     --navbar-bottom-height: 0px;
     --navbar-height: var(--navbar-top-height);
 }
@@ -110,7 +110,7 @@ a:hover {
 }
 
 .logo-img {
-    height: 32px;
+    height: 50px;
     width: auto;
     display: block;
 }
@@ -136,7 +136,7 @@ a:hover {
     height: var(--navbar-top-height);
     gap: 0;
     margin: 0;
-    padding: 0;
+    padding: 25px 0 0 0;
 }
 
 .nav-link {
