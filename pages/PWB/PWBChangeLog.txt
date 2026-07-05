@@ -3,7 +3,7 @@ Fixes
 [Fixed] Inspector Responsiveness. Resolved an issue where the Inspector would freeze, or stop updating after using PWB tools.
 [Fixed] Data Saving Conflicts. Resolved asset import errors that occurred when saving PWB data and palette files.
 [Fixed] Multibrush Thumbnails. Resolved an issue where the Multibrush grid would fail to display all items if one of the thumbnails was missing.
-Changes`
+Changes
 [Improved] Thumbnail Updating Performance. Improved editor responsiveness by reducing unnecessary asset database refreshes when updating existing thumbnails.
 
 Prefab World Builder 4.12.0 May 31, 2026
