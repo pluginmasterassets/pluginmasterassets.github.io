@@ -1,3 +1,7 @@
+Prefab World Builder 4.12.2 Jul 14, 2026
+Fixes
+[Fixed] Unity 6.5 Compatibility. Resolved compilation errors caused by deprecated API methods in Unity 6.5.
+
 Prefab World Builder 4.12.1 Jul 5, 2026
 Fixes
 [Fixed] Inspector Responsiveness. Resolved an issue where the Inspector would freeze, or stop updating after using PWB tools.
