@@ -1,8 +1,7 @@
-Prefab World Builder 4.12.3 Sep 4, 2026
+Prefab World Builder 4.12.3 Aug 14, 2026
 Fixes
 [Fixed] Obsolete File Cleanup. Resolved an issue that occasionally prevented the deletion of obsolete files during editor initialization.
 [Fixed] Line Tool Navigation. Fixed an issue where using the Line tool on certain objects could cause errors in the Scene view, breaking camera navigation until the project was reopened.
-[Fixed] Editor Mode Interruptions. Resolved an issue where clicking bones during Avatar configuration or using other special editors unexpectedly exited the mode.
 
 Prefab World Builder 4.12.2 Jul 14, 2026
 Fixes
